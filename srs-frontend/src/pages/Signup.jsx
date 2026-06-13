@@ -74,7 +74,7 @@ function Signup() {
                             required
                         />
                     </div>
-
+ 
                     <div className="input-group">
                         <span className="input-icon">📧</span>
                         <input
