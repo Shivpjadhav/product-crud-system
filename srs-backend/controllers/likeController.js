@@ -49,3 +49,28 @@ exports.likeProduct =
         });
 
     };
+exports.getProducts =
+    async (req, res) => {
+
+        const products =
+            await Product.find();
+
+        const updatedProducts =
+            products.map(product => ({
+
+                ...product.toObject(),
+
+                isLiked:
+                    product.likes.some(
+                        id =>
+                            id.toString() ===
+                            req.user.id
+                    )
+
+            }));
+
+        res.json(
+            updatedProducts
+        );
+
+    };
