@@ -36,10 +36,21 @@ exports.addProduct = async (req, res) => {
     try {
 
         const {
-            title,
-            description,
-            image
-        } = req.body;
+    title,
+    price,
+    description
+} = req.body;
+
+const product =
+await Product.create({
+
+    title,
+    price,
+    description,
+    image:imageUrl,
+    createdBy:req.user.id
+
+});
 
         const product =
             await Product.create({
