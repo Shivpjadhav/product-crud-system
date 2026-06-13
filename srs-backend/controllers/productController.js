@@ -218,3 +218,11 @@ exports.getLikedProducts =
         }
 
     };
+const products = await Product.find();
+
+const updatedProducts = products.map(product => ({
+    ...product.toObject(),
+    isLiked: product.likes.includes(req.user.id)
+}));
+
+res.json(updatedProducts);
