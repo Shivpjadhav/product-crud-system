@@ -6,11 +6,14 @@ import './AddProduct.css';
 
 function AddProduct() {
     const navigate = useNavigate();
-    const [form, setForm] = useState({
-        title: "",
-        description: "",
-        image: ""
-    });
+    const [form,setForm] = useState({
+
+    title:"",
+    price:"",
+    description:"",
+    image:null
+
+});
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -40,6 +43,17 @@ function AddProduct() {
                             })
                         }
                     />
+                    <input
+    type="number"
+    placeholder="Price"
+    value={form.price}
+    onChange={(e)=>
+        setForm({
+            ...form,
+            price:e.target.value
+        })
+    }
+/>
                     <textarea
                         placeholder="Description"
                         value={form.description}
