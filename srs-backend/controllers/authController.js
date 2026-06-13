@@ -12,10 +12,18 @@ exports.register =
         try {
 
             const {
-                name,
-                email,
-                password
-            } = req.body;
+    name,
+    email,
+    mobile,
+    password
+} = req.body;
+
+const user = await User.create({
+    name,
+    email,
+    mobile,
+    password:hashedPassword
+});
 
             const userExists =
                 await User.findOne({
@@ -115,14 +123,12 @@ exports.login =
 
             res.json({
                 token,
-                user: {
-                    id:
-                        user._id,
-                    name:
-                        user.name,
-                    email:
-                        user.email
-                }
+                user:{
+    id:user._id,
+    name:user.name,
+    email:user.email,
+    mobile:user.mobile
+}
             });
 
         } catch (error) {
