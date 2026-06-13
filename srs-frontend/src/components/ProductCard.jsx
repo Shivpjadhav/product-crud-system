@@ -14,8 +14,13 @@ function ProductCard({ product, refresh }) {
             <h3>{product.title}</h3>
             <p>{product.description}</p>
             <div className="button-group">
+                 if (product.likes && product.likes.length > 0) {
+                    <span className="like-count">
+                        ❤️ {product.likes.length} like{product.likes.length !== 1 ? 's' : ''}
+                    </span>
+                }
                 <button onClick={likeProduct}>
-                    ❤️ Like
+                     Like
                 </button>
                 <button onClick={() => navigate(`/edit-product/${product._id}`)}>
                     ✏️ Edit
