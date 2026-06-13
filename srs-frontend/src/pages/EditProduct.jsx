@@ -10,7 +10,8 @@ function EditProduct() {
     const [form, setForm] = useState({
         title: "",
         description: "",
-        image: ""
+        image: "",
+        price=''
     });
 
     useEffect(() => {
@@ -54,6 +55,16 @@ function EditProduct() {
                             })
                         }
                     />
+                    <input
+    type="number"
+    value={form.price}
+    onChange={(e)=>
+        setForm({
+            ...form,
+            price:e.target.value
+        })
+    }
+/>
                     <textarea
                         placeholder="Description"
                         value={form.description}
