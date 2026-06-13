@@ -5,10 +5,10 @@ import './Register.css';
 function Signup() {
     const navigate = useNavigate();
     const [form, setForm] = useState({
-    name:"",
-    email:"",
-    password:"",
-});
+        name: "",
+        email: "",
+        password: ""
+    });
     const [loading, setLoading] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState("");
 
@@ -74,7 +74,7 @@ function Signup() {
                             required
                         />
                     </div>
- 
+
                     <div className="input-group">
                         <span className="input-icon">📧</span>
                         <input
