@@ -132,3 +132,21 @@
         font-size: 0.85rem;
     }
 }
+
+.like-btn {
+    background: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.liked-btn {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
